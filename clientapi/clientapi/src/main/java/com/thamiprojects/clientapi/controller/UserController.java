@@ -9,8 +9,11 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(value = "/user")
 public class UserController {
 
-    @Autowired
     private UserService service;
+
+    public UserController(UserService service) {
+        this.service = service;
+    }
 
     @PostMapping(value = "/saveUser")
     public User saveUser(User user) {

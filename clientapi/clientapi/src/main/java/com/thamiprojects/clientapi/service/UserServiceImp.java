@@ -10,11 +10,10 @@ import java.util.Objects;
 @Service
 public class UserServiceImp implements UserService{
 
-//    @Autowired
     UserRepository userRepository;
 
-    @Autowired
     public UserServiceImp(UserRepository userRepository) {
+        super();
         this.userRepository = userRepository;
     }
 

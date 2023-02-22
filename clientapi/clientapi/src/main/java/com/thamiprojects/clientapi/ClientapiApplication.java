@@ -10,7 +10,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 //@SpringBootApplication(scanBasePackages={"com.thamiprojects.clientapi"})
 //@ComponentScan({"com.thamiprojects.clientapi", "com.thamiprojects.clientapi.repository"})
-@EnableJpaRepositories(basePackageClasses = UserRepository.class)
+//@EnableJpaRepositories(basePackageClasses = UserRepository.class)
 //@EntityScan("com.thamiprojects.clientapi")
 //@EnableJpaRepositories(basePackages = "com.thamiprojects.clientapi.repository", entityManagerFactoryRef = "sessionFactory")
 public class ClientapiApplication {

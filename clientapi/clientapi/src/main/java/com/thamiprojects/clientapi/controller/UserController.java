@@ -16,7 +16,7 @@ public class UserController {
     }
 
     @PostMapping(value = "/saveUser")
-    public User saveUser(User user) {
+    public User saveUser(@RequestBody  User user) {
         System.out.println("CALLING SAVE USER!!!");
         return service.saveUser(user);
     }

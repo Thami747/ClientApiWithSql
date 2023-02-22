@@ -10,8 +10,14 @@ import java.util.Objects;
 @Service
 public class UserServiceImp implements UserService{
 
-    @Autowired(required = false)
+//    @Autowired
     UserRepository userRepository;
+
+    @Autowired
+    public UserServiceImp(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
     @Override
     public User saveUser(User user) {
         return userRepository.save(user);
@@ -23,8 +29,8 @@ public class UserServiceImp implements UserService{
     }
 
     @Override
-    public User updateUser(User user, Integer departmentId) {
-        User userFromDb = userRepository.findById(departmentId).get();
+    public User updateUser(User user, Long userId) {
+        User userFromDb = userRepository.findById(userId).get();
 
         if (Objects.nonNull(user.getFirstName()) && !"".equalsIgnoreCase(user.getFirstName())) {
             userFromDb.setFirstName(user.getFirstName());
@@ -46,7 +52,7 @@ public class UserServiceImp implements UserService{
     }
 
     @Override
-    public void deleteUser(Integer userId) {
+    public void deleteUser(Long userId) {
         userRepository.deleteById(userId);
     }
 }
